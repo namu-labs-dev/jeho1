@@ -1,0 +1,25 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+    types: [created]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Create Vercel project
+        env:
+          VERCEL_TOKEN: ${{ secrets.INTERN_VERCEL_TOKEN }}
+        run: |
+          vercel --prod --scope namu-labs --yes --token $VERCEL_TOKEN
