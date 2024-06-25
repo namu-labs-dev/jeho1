@@ -1,0 +1,19 @@
+.slick-track {
+  align-items: center;
+}
+.slick-slide {
+  width: 656px !important;
+  height: 350px !important;
+}
+.slick-slide > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+.slick-slide.slick-center {
+  height: 450px !important;
+}
+
+.slick-slide.slick-center .popup {
+  display: flex;
+  transition: all 0.9s ease-in-out;
+}

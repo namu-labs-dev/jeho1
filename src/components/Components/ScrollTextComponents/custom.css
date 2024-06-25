@@ -1,0 +1,13 @@
+.text {
+  -webkit-text-stroke: 2px #ff4a17;
+  animation: slider 20s linear infinite;
+}
+@keyframes slider {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

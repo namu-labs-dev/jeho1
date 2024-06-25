@@ -1,0 +1,11 @@
+export { default as logo } from "./logo.svg";
+export { default as shape_1 } from "./shape_1.svg";
+export { default as rating } from "./rating.svg";
+export { default as phone } from "./phone.svg";
+export { default as mail } from "./mail.svg";
+export { default as marker_pin } from "./marker_pin.svg";
+export { default as partner_1 } from "./partner_1.svg";
+export { default as partner_2 } from "./partner_2.svg";
+export { default as partner_3 } from "./partner_3.svg";
+export { default as partner_4 } from "./partner_4.svg";
+export { default as partner_5 } from "./partner_5.svg";

@@ -1,0 +1,93 @@
+import Slider, { type Settings } from "react-slick";
+import DividerComponent from "~/components/Components/DividerComponent/DividerComponent";
+import { RightContainerComponent } from "~/components/Components/RightContainerComponent/RightContainerComponent";
+import SliderCarouselComponent from "~/components/Components/SliderCarouselComponent/SliderCarouselComponent";
+import { TestimonialImageComponent } from "~/components/Components/TestimonialImageComponent/TestimonialImageComponent";
+import { TestimonialListComponent } from "~/components/Components/TestimonialListComponent/TestimonialListComponent";
+import { testimonialList } from "~/data/testimonialList";
+import "./custom.css";
+import { SliderButtonComponent } from "~/components/Components/SliderButtonComponent/SliderButtonComponent";
+import { useRef } from "react";
+import SVGAtom from "~/components/Atoms/SVGAtom/SVGAtom";
+export type TestimonialProps = {
+  url: string;
+  text: string;
+  author: string;
+  position: string;
+};
+
+const imageSettings: Settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: false,
+  className: "center",
+  centerMode: true,
+};
+const contentSettings: Settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+};
+
+export const TestimonialModule = () => {
+  const sliderRef = useRef<Slider>(null);
+  const next = () => {
+    sliderRef?.current?.slickNext();
+  };
+  const previous = () => {
+    sliderRef?.current?.slickPrev();
+  };
+  return (
+    <section className='relative bg-linear-gradient'>
+      <SVGAtom
+        iconName='shape_1'
+        width={162}
+        height={181}
+        className='new-shape hidden lg:block'
+      />
+      <DividerComponent className='h-[80px] lg:h-[130px]' />
+      <div className='container mx-auto px-[.75rem]'>
+        <div className='flex flex-col items-start gap-[40px] lg:flex-row'>
+          <RightContainerComponent className='h-[500px] lg:w-[35%]'>
+            <SliderCarouselComponent
+              sliderRef={sliderRef}
+              settings={imageSettings}
+              className='image-slider h-full w-full'
+            >
+              {testimonialList.map((listImage, index) => (
+                <TestimonialImageComponent
+                  alt={listImage.author}
+                  key={index}
+                  url={listImage.url}
+                />
+              ))}
+            </SliderCarouselComponent>
+          </RightContainerComponent>
+          <RightContainerComponent className='relative h-[500px] lg:w-[55%] xl:w-[65%]'>
+            <SliderCarouselComponent
+              sliderRef={sliderRef}
+              settings={contentSettings}
+              className='content-slider h-full w-full'
+            >
+              {testimonialList.map((listImage, index) => (
+                <TestimonialListComponent {...listImage} key={index} />
+              ))}
+            </SliderCarouselComponent>
+            <SliderButtonComponent
+              handleBackwardClick={previous}
+              handleForwardClick={next}
+              className='absolute bottom-[27%] right-0'
+            />
+          </RightContainerComponent>
+        </div>
+      </div>
+      <DividerComponent className='h-[80px] lg:h-[130px]' />
+    </section>
+  );
+};

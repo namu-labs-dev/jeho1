@@ -1,0 +1,54 @@
+.cs-shape_1:first-child {
+  top: 15%;
+  left: 15%;
+}
+.cs-shape_1:first-child {
+  top: 25%;
+  left: 10%;
+  animation: semi-rotate-anim 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.cs-shape_1 {
+  position: absolute;
+  z-index: 999;
+}
+.cs-shape_1 {
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 14px solid #ff4a17;
+}
+.cs-shape_1:nth-child(2) {
+  top: 35%;
+  left: 85%;
+}
+.cs-shape_1:nth-child(2) {
+  top: 30%;
+  left: 72%;
+  transform: rotate(-15deg);
+  animation: semi-rotate-anim 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.cs-shape_1:nth-child(3) {
+  top: 85%;
+  left: 35%;
+}
+.cs-shape_1:nth-child(3) {
+  top: 68%;
+  left: 35%;
+  transform: rotate(-30deg);
+  animation: animo-x 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes semi-rotate-anim {
+  50% {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(25px) rotate(-53deg);
+  }
+}
+
+@keyframes animo-x {
+  50% {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(44px);
+  }
+}
