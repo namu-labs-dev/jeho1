@@ -1,3 +1,7 @@
+.award .slick-track {
+  gap: 0 !important;
+}
+
 .cs-shape_wrap_2 {
   position: relative;
 }

@@ -1,6 +1,7 @@
 import { type MotionValue, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import { HomeTemplate } from "~/components/Templates/Home/HomeTemplate";
+import { icons } from "~/data/icons";
 import { listcard } from "~/data/listcard";
 
 export const HomeContainer = () => {
@@ -51,6 +52,9 @@ export const HomeContainer = () => {
       drawerComponentProps: {
         activeDrawer,
         handleDrawer,
+        socialComponents: {
+          icon: icons,
+        },
       },
       mouseCursorComponentProps: {
         mouseCursorAtomProps: {
@@ -65,6 +69,11 @@ export const HomeContainer = () => {
         handleDrawer,
         handleToggle,
         isBlack,
+      },
+    },
+    footerModuleProps: {
+      socialComponents: {
+        icon: icons,
       },
     },
   };

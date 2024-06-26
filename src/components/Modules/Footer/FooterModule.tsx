@@ -1,8 +1,11 @@
 import Link from "next/link";
+import React from "react";
 import SVGAtom from "~/components/Atoms/SVGAtom/SVGAtom";
+import { SocialIconComponent } from "~/components/Components/SocialIconComponent/SocialIconComponent";
 import SubscribeComponent from "~/components/Components/SubscribeComponent/SubscribeComponent";
 
 type Props = {
+  socialComponents: React.ComponentProps<typeof SocialIconComponent>;
   // Add props here
 };
 
@@ -18,6 +21,10 @@ export const FooterModule = (props: Props) => {
                 Welcome to arino sed ut perspiciae omunde omnis iste natus error
                 sitort voluptatem accusantium.
               </p>
+              <SocialIconComponent
+                className='mt-[30px]'
+                {...props.socialComponents}
+              />
             </div>
             <div className='ml-0 mt-[30px] sm:mt-0 lg:ml-[30px]'>
               <p className='text-[16px] font-semibold text-white lg:text-[18px]'>

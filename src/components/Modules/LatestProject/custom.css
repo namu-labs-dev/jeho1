@@ -1,3 +1,6 @@
+.slick-list {
+  padding: 0 !important;
+}
 .slick-track {
   align-items: center;
 }
@@ -8,6 +11,7 @@
 .slick-slide > div {
   width: 100% !important;
   height: 100% !important;
+  flex-shrink: 0 !important;
 }
 .slick-slide.slick-center {
   height: 450px !important;

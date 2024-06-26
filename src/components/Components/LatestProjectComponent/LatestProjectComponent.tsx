@@ -9,7 +9,7 @@ export type LatestItemProps = {
 export const LatestProjectComponent = (props: LatestItemProps) => {
   return (
     <div
-      className={`relative block h-full w-full flex-1  overflow-hidden rounded-[12px]`}
+      className={`relative block h-full w-full overflow-hidden rounded-[12px]`}
     >
       <Image
         src={props.url}

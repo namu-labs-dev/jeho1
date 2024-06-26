@@ -60,7 +60,7 @@ export const OurAwardModule = (props: Props) => {
               className='shrink-0 xl:w-[30%]'
             />
             <RightContainerComponent className='mx-auto shrink-0 xl:w-[50%]'>
-              <SliderCarouselComponent settings={settings}>
+              <SliderCarouselComponent settings={settings} className='award'>
                 {[1, 2, 3, 4, 5, 6, 7, 8].map((_, index) => (
                   <OurAwardComponent key={index} />
                 ))}

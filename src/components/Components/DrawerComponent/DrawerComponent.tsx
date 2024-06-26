@@ -4,10 +4,12 @@ import SVGAtom from "~/components/Atoms/SVGAtom/SVGAtom";
 import { CloseCircleOutlined } from "@ant-design/icons";
 import { info } from "~/data/info";
 import type * as svgs from "public/svg";
+import { SocialIconComponent } from "../SocialIconComponent/SocialIconComponent";
 
 type drawerAtomProps = {
   handleDrawer: () => void;
   activeDrawer: boolean;
+  socialComponents: React.ComponentProps<typeof SocialIconComponent>;
 };
 
 export const DrawerComponent = (props: drawerAtomProps) => {
@@ -69,35 +71,10 @@ export const DrawerComponent = (props: drawerAtomProps) => {
           />
         </div>
         <SubscribeComponent />
-        {/* <div className='my-[35px]'>
-      <h2 className='mb-[35px] text-[18px] leading-[1.4em] text-white'>
-        Subscribe
-      </h2>
-      <Space.Compact className='flex h-[50px] items-center rounded-[10px] bg-black px-[5px]'>
-        <Input
-          className='h-full border-none bg-black'
-          placeholder='example@gmail.com'
+        <SocialIconComponent
+          className='mt-[30px]'
+          {...props.socialComponents}
         />
-        <Button
-          htmlType='button'
-          type='default'
-          className='h-[40px] rounded-[10px] border-none bg-accentRed'
-        >
-          Send
-        </Button>
-      </Space.Compact>
-
-      <p className='mt-[25px] text-[16px] text-accentGrey'>
-        At vero eos et accusamus et iusto odio as part dignissimos ducimus
-        qui blandit.
-      </p>
-    </div> */}
-        {/* <SocialIconCompent {...props.socialIconCompentProps} /> */}
-        <ul className='flex items-center gap-[10px] py-[35px]'>
-          {/* {footerlistitem.map((icon, index) => (
-        <FooterList {...icon} key={index} />
-      ))} */}
-        </ul>
       </aside>
     </div>
   );

@@ -45,7 +45,7 @@ export const LatestProjectModule = (props: Props) => {
   return (
     <>
       <DividerComponent className='h-[50px] lg:h-[150px]' />
-      <section>
+      <section className='px-[.75rem]'>
         <div className='container mx-auto'>
           <LeftContainerComponent
             subTitle='Latest Projects'

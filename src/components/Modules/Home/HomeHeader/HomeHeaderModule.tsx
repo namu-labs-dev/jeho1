@@ -23,7 +23,7 @@ export const HomeHeaderModule = (props: Props) => {
         <div className='cs-shape_1'></div>
         <div className='cs-shape_1'></div>
         <div className='cs-shape_1'></div>
-        <div className='container mx-auto pb-[220px] pt-[60px]'>
+        <div className='container mx-auto px-[.75rem] pb-[220px] pt-[60px]'>
           <div className='w-full'>
             <h1 className='mb-[20px] text-[42px] font-bold sm:text-[50px] md:text-[60px] lg:mb-[60px] lg:text-[100px] xl:text-[130px] xl:leading-[150px]'>
               Creativity In

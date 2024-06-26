@@ -19,18 +19,17 @@ export const NavListComponents = (props: Props) => {
   const handleMouseLeave = () => {
     setVisibleIndex(null);
   };
-  console.log(mobileNav);
   return (
     <div
-      className={`absolute z-50 xl:left-[50%] xl:top-[50%] ${activeNavbar ? "top-[100px] flex" : "hidden"} h-fit w-full items-center justify-center text-white xl:flex xl:-translate-x-[50%] xl:-translate-y-[50%]`}
+      className={`absolute z-50 overflow-hidden transition-all duration-500 ease-linear xl:left-[50%] xl:top-[50%] xl:overflow-auto ${activeNavbar ? "top-[100px] max-h-[600px]" : "top-[100px] max-h-0"} w-full items-center justify-center text-white xl:flex xl:max-h-20 xl:-translate-x-[50%] xl:-translate-y-[50%]`}
     >
       <ul
-        className={`flex max-h-full gap-[45px] py-[30px] ${activeNavbar ? "w-full flex-col bg-primaryColor" : ""} `}
+        className={`flex max-h-[900px] flex-col gap-[45px] border-y bg-primaryColor py-[30px] xl:border-none xl:bg-transparent ${activeNavbar ? "w-full flex-col" : ""} xl:flex-row`}
       >
         {navLinks.map((link, index) => (
           <li
             key={index}
-            className='group relative px-[20px] xl:p-0'
+            className='group relative overflow-hidden px-[20px] transition-all duration-500 ease-linear xl:overflow-auto xl:p-0 '
             onMouseEnter={() => handleMouseEnter(index)}
           >
             <div className='flex items-center justify-between'>
@@ -44,12 +43,12 @@ export const NavListComponents = (props: Props) => {
                   <DownOutlined className='hidden text-[12px] xl:block' />
                 )}
               </Link>
-              {mobileNav !== index && (
+              {mobileNav !== index && link.label !== "About" && (
                 <button type='button' onClick={() => setMobileNav(index)}>
                   <PlusOutlined className='block xl:hidden' />
                 </button>
               )}
-              {mobileNav === index && (
+              {mobileNav === index && link.label !== "About" && (
                 <button type='button' onClick={() => setMobileNav(null)}>
                   <MinusOutlined className='block xl:hidden' />
                 </button>
@@ -59,7 +58,7 @@ export const NavListComponents = (props: Props) => {
               <ul
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
-                className={`xl:border-t-2  ${mobileNav === index ? "flex max-h-[400px] overflow-hidden bg-transparent" : "max-h-0"} relative left-0 top-[30px] w-full flex-col gap-[20px] p-0 px-[10px]  xl:absolute xl:h-full xl:w-[280px] xl:rounded-b-[7px] xl:border-t-accentRed  ${visibleIndex === index ? "xl:flex xl:bg-[#181818]" : "xl:hidden"}`}
+                className={`transition-all duration-500 ease-in xl:border-t-2 ${mobileNav === index ? "flex h-full max-h-[600px] min-h-[100px] overflow-hidden bg-transparent" : "max-h-0"} absolute left-0 top-[30px] w-full flex-col gap-[20px] p-0 px-[10px] xl:absolute xl:max-h-[600px] xl:w-[280px] xl:rounded-b-[7px] xl:border-t-accentRed xl:py-[20px]  ${visibleIndex === index ? "xl:flex xl:bg-[#181818]" : "xl:hidden"}`}
               >
                 {link.children?.map((item, index) => (
                   <li key={index} className='text-[17px]'>

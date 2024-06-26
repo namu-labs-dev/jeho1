@@ -15,6 +15,7 @@ import { TestimonialModule } from "~/components/Modules/Testimonial/TestimonialM
 type Props = {
   whatCanWeDoModuleProps: React.ComponentProps<typeof WhatCanWeDoModule>;
   homeHeaderModuleProps: React.ComponentProps<typeof HomeHeaderModule>;
+  footerModuleProps: React.ComponentProps<typeof FooterModule>;
 };
 
 export const HomeTemplate = (props: Props) => {
@@ -40,7 +41,7 @@ export const HomeTemplate = (props: Props) => {
         <ParnterModule />
       </Content>
 
-      <FooterModule />
+      <FooterModule {...props.footerModuleProps} />
       {/*
     <Footer style={{ padding: 0, minHeight: 50 }}>
     place for footer module
