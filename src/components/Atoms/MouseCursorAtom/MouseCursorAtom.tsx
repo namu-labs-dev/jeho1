@@ -13,7 +13,7 @@ export const MouseCursorAtom = (props: Props) => {
         translateX: cursorX,
         translateY: cursorY,
       }}
-      className="cursor"
+      className='cursor hidden md:flex'
     />
   );
 };

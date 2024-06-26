@@ -1,4 +1,4 @@
-import { HomeContentModule } from "~/components/Modules/Home/HomeContentModule";
+// import { HomeContentModule } from "~/components/Modules/Home/HomeContentModule";
 import { Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import { HomeHeaderModule } from "~/components/Modules/Home/HomeHeader/HomeHeaderModule";
@@ -16,6 +16,7 @@ type Props = {
   whatCanWeDoModuleProps: React.ComponentProps<typeof WhatCanWeDoModule>;
   homeHeaderModuleProps: React.ComponentProps<typeof HomeHeaderModule>;
   footerModuleProps: React.ComponentProps<typeof FooterModule>;
+  // homeContentModulerops: React.ComponentProps<typeof HomeContentModule>;
 };
 
 export const HomeTemplate = (props: Props) => {

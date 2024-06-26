@@ -29,7 +29,7 @@ export const NavListComponents = (props: Props) => {
         {navLinks.map((link, index) => (
           <li
             key={index}
-            className='group relative overflow-hidden px-[20px] transition-all duration-500 ease-linear xl:overflow-auto xl:p-0 '
+            className='group relative overflow-hidden px-[20px] uppercase transition-all duration-500 ease-linear xl:overflow-auto xl:p-0 '
             onMouseEnter={() => handleMouseEnter(index)}
           >
             <div className='flex items-center justify-between'>

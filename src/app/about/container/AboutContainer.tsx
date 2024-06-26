@@ -1,10 +1,10 @@
 import { type MotionValue, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
-import { HomeTemplate } from "~/components/Templates/Home/HomeTemplate";
+import { AboutTemplate } from "~/components/Templates/About/AboutTemplate";
+import { aboutOurAgency } from "~/data/agency";
 import { icons } from "~/data/icons";
-import { listcard } from "~/data/listcard";
 
-export const HomeContainer = () => {
+export const AboutContainer = () => {
   const cursorX: MotionValue<number> = useMotionValue(-100);
   const cursorY: MotionValue<number> = useMotionValue(-100);
   const [isBlack, setIsBlack] = useState(false);
@@ -42,13 +42,16 @@ export const HomeContainer = () => {
     };
   }, [cursorX, cursorY]);
 
-  const homeTemplateProps: React.ComponentProps<typeof HomeTemplate> = {
-    whatCanWeDoModuleProps: {
-      cardComponent: {
-        lists: listcard,
+  const aboutTemplateProps: React.ComponentProps<typeof AboutTemplate> = {
+    headerModuleProps: {
+      headerComponentProps: {
+        headerAtomProps: {
+          currentPage: "About us",
+          prevLink: "/",
+          prevText: "Home",
+          title: "About Us",
+        },
       },
-    },
-    homeHeaderModuleProps: {
       drawerComponentProps: {
         activeDrawer,
         handleDrawer,
@@ -56,21 +59,29 @@ export const HomeContainer = () => {
           icon: icons,
         },
       },
-      mouseCursorComponentProps: {
-        mouseCursorAtomProps: {
-          cursorX,
-          cursorY,
-        },
-        cursorX,
-        cursorY,
-      },
       navbarComponentProps: {
         activeNavbar,
         handleDrawer,
         handleToggle,
         isBlack,
       },
+      mouseCursorComponentProps: {
+        cursorX,
+        cursorY,
+        mouseCursorAtomProps: {
+          cursorX,
+          cursorY,
+        },
+      },
     },
+    aboutOurAgencyModuleProps: {
+      data: aboutOurAgency.data,
+      text: aboutOurAgency.text,
+      title: aboutOurAgency.title,
+      subTitle: aboutOurAgency.title,
+    },
+    whyChooseUsModuleProps: {},
+    ourTeamModuleProps: {},
     footerModuleProps: {
       socialComponents: {
         icon: icons,
@@ -80,12 +91,7 @@ export const HomeContainer = () => {
         title: "Let’s disscuse make something cool together",
       },
     },
-    // homeContentModulerops: {
-    //   DiscussionComponent: {
-    //     title: "",
-    //   },
-    // },
   };
 
-  return <HomeTemplate {...homeTemplateProps} />;
+  return <AboutTemplate {...aboutTemplateProps} />;
 };

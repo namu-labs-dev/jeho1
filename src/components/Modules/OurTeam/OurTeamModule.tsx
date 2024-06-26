@@ -8,7 +8,7 @@ import { SliderButtonComponent } from "~/components/Components/SliderButtonCompo
 import SliderCarouselComponent from "~/components/Components/SliderCarouselComponent/SliderCarouselComponent";
 import { TeamComponent } from "~/components/Components/TeamComponent/TeamComponent";
 import { teamlist } from "~/data/teamlist";
-
+import "./custom.css";
 type Props = {
   // Add props here
 };
@@ -24,11 +24,11 @@ const settings: Settings = {
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 768,
       settings: {
         slidesToShow: 2,
       },
@@ -53,15 +53,14 @@ export const OurTeamModule = (props: Props) => {
   return (
     <>
       <DividerComponent className='h-[80px] lg:h-[145px]' />
-      <section className='px-[.75rem]'>
+      <section className='px-[.7rrem]'>
         <div className='container mx-auto'>
           <div>
-            <div className='flex items-center justify-between'>
+            <div className='flex items-center justify-between px-[.75rem]'>
               <LeftContainerComponent
-                title='Awesome team
-members'
+                title='Awesome team members'
                 subTitle='Our Team'
-                className='xl:w-[30%]'
+                className='w-[50%] xl:w-[30%]'
               />
               <SliderButtonComponent
                 handleBackwardClick={previous}
@@ -72,7 +71,7 @@ members'
 
             <RightContainerComponent>
               <SliderCarouselComponent
-                className='w-full'
+                className='team-slide w-full'
                 sliderRef={sliderRef}
                 settings={settings}
               >
@@ -84,7 +83,7 @@ members'
           </div>
         </div>
       </section>
-      <DividerComponent className='h-[80px] lg:h-[150px]' />
+      {/* <DividerComponent className='h-[80px] lg:h-[150px]' /> */}
     </>
   );
 };

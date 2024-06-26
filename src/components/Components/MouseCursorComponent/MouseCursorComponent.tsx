@@ -16,7 +16,7 @@ export const MouseCursorComponent = (props: Props) => {
           translateX: cursorX,
           translateY: cursorY,
         }}
-        className="cursor-container"
+        className='cursor-container hidden md:flex'
       ></motion.div>
       <MouseCursorAtom {...props.mouseCursorAtomProps} />
     </AnimatePresence>

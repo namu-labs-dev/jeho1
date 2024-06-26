@@ -1,0 +1,27 @@
+img.why-section {
+  position: relative !important;
+  z-index: 9;
+}
+/* img.why-section::after {
+    content: " " !important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ff4a17;
+    right: -60px;
+    bottom: -60px;
+    border-radius: inherit;
+    z-index: -10;
+  } */
+
+.image-after::after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  background-color: #ff4a17;
+  right: -20px;
+  bottom: -60px;
+  border-radius: inherit;
+  z-index: -10;
+}

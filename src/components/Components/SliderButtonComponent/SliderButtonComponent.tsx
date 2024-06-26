@@ -11,7 +11,7 @@ export const SliderButtonComponent = (props: Props) => {
   const { handleBackwardClick, handleForwardClick, className } = props;
 
   return (
-    <div className={`z-30 hidden items-center gap-[15px] md:flex ${className}`}>
+    <div className={`z-30 hidden items-center gap-[15px] xl:flex ${className}`}>
       <button
         onClick={handleBackwardClick}
         type='button'

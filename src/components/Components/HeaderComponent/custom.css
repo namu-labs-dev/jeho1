@@ -1,0 +1,11 @@
+.large-bg:after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  height: 151px;
+  width: 151px;
+  background: #ff4a17;
+  opacity: 0.8;
+  filter: blur(125px);
+}
