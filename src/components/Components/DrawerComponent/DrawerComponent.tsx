@@ -6,13 +6,13 @@ import { info } from "~/data/info";
 import type * as svgs from "public/svg";
 import { SocialIconComponent } from "../SocialIconComponent/SocialIconComponent";
 
-type drawerAtomProps = {
+type Props = {
   handleDrawer: () => void;
   activeDrawer: boolean;
   socialComponents: React.ComponentProps<typeof SocialIconComponent>;
 };
 
-export const DrawerComponent = (props: drawerAtomProps) => {
+export const DrawerComponent = (props: Props) => {
   const { activeDrawer, handleDrawer } = props;
   return (
     <div

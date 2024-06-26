@@ -25,11 +25,6 @@ export const AboutTemplate = (props: Props) => {
       }}
     >
       <HeaderModule {...props.headerModuleProps} />
-      {/*
-    <Header style={{ padding: 0, height: 50 }}>
-    place for header module
-    </Header>
-    */}
 
       <Content style={{ overflow: "hidden" }} className='md:px-[1.2rem]'>
         <AboutOurAgencyModule {...props.aboutOurAgencyModuleProps} />

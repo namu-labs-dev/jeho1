@@ -18,6 +18,7 @@ export default {
         "fun-fact": "url(/svg/funfact_shape_bg.svg)",
         "video-bg": "url(/images/video_bg.jpeg)",
         "hero-other": "url(/images/about_hero_bg.jpeg)",
+        "other-bg": "url(/images/service_hero_bg.jpeg)",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],

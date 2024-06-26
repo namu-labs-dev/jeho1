@@ -58,11 +58,11 @@ export const navLinks = [
     label: "About",
   },
   {
-    link: "/",
+    link: "/service",
     label: "Services",
     children: [
       {
-        link: "/",
+        link: "/service",
         label: "Services",
         className: "uppercase bg-[#181818] p-0",
       },

@@ -1,10 +1,9 @@
 import { type MotionValue, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
-import { AboutTemplate } from "~/components/Templates/About/AboutTemplate";
-import { aboutOurAgency } from "~/data/agency";
+import { ServiceTemplate } from "~/components/Templates/Service/ServiceTemplate";
 import { icons } from "~/data/icons";
 
-export const AboutContainer = () => {
+export const ServiceContainer = () => {
   const cursorX: MotionValue<number> = useMotionValue(-100);
   const cursorY: MotionValue<number> = useMotionValue(-100);
   const [isBlack, setIsBlack] = useState(false);
@@ -41,30 +40,17 @@ export const AboutContainer = () => {
       window.removeEventListener("mousemove", mouseCursor);
     };
   }, [cursorX, cursorY]);
-
-  const aboutTemplateProps: React.ComponentProps<typeof AboutTemplate> = {
+  const serviceTemplateProps: React.ComponentProps<typeof ServiceTemplate> = {
+    servicePricingPackModuleProps: { title: "ServicePricingPackModule" },
     headerModuleProps: {
       headerComponentProps: {
-        bgImage: "bg-hero-other",
+        bgImage: "bg-other-bg",
         headerAtomProps: {
-          currentPage: "About us",
-          prevLink: "/",
+          currentPage: "Services",
+          title: "Services",
+          prevLink: "/service",
           prevText: "Home",
-          title: "About Us",
         },
-      },
-      drawerComponentProps: {
-        activeDrawer,
-        handleDrawer,
-        socialComponents: {
-          icon: icons,
-        },
-      },
-      navbarComponentProps: {
-        activeNavbar,
-        handleDrawer,
-        handleToggle,
-        isBlack,
       },
       mouseCursorComponentProps: {
         cursorX,
@@ -74,15 +60,20 @@ export const AboutContainer = () => {
           cursorY,
         },
       },
+      navbarComponentProps: {
+        activeNavbar,
+        handleDrawer,
+        handleToggle,
+        isBlack,
+      },
+      drawerComponentProps: {
+        activeDrawer,
+        handleDrawer,
+        socialComponents: {
+          icon: icons,
+        },
+      },
     },
-    aboutOurAgencyModuleProps: {
-      data: aboutOurAgency.data,
-      text: aboutOurAgency.text,
-      title: aboutOurAgency.title,
-      subTitle: aboutOurAgency.title,
-    },
-    whyChooseUsModuleProps: {},
-    ourTeamModuleProps: {},
     footerModuleProps: {
       socialComponents: {
         icon: icons,
@@ -94,5 +85,5 @@ export const AboutContainer = () => {
     },
   };
 
-  return <AboutTemplate {...aboutTemplateProps} />;
+  return <ServiceTemplate {...serviceTemplateProps} />;
 };

@@ -1,5 +1,5 @@
 import FactListAtom from "~/components/Atoms/FactListAtom/FactListAtom";
-import { listfact } from "~/components/Atoms/FactListAtom/listfact";
+import { listfact } from "~/data/listfact";
 
 type Props = {
   className?: string;
