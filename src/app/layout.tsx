@@ -1,5 +1,6 @@
 import "~/styles/globals.css";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { GeistSans } from "geist/font/sans";
 
 export const metadata = {
@@ -15,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
+      <body className="bg-primaryColor">{children}</body>
     </html>
   );
 }

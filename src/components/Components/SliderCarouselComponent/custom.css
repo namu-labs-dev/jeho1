@@ -1,0 +1,12 @@
+.slick-track {
+  display: flex;
+  gap: 24px;
+}
+.slick-slide {
+  width: 323px !important;
+  height: 380px !important;
+}
+.slick-slide > div {
+  width: 100% !important;
+  height: 100% !important;
+}

@@ -1,7 +1,14 @@
+import React from "react";
+import DiscussionComponent from "~/components/Components/DiscussionComponent/DiscussionComponent";
+
 type Props = {
-  title: string;
+  DiscussionComponent: React.ComponentProps<typeof DiscussionComponent>;
 };
 
 export const HomeContentModule = (props: Props) => {
-  return <div>{props.title}</div>;
+  return (
+    <>
+      <DiscussionComponent {...props.DiscussionComponent} />
+    </>
+  );
 };

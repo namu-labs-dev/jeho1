@@ -1,0 +1,29 @@
+.award .slick-track {
+  gap: 0 !important;
+}
+
+.cs-shape_wrap_2 {
+  position: relative;
+}
+.cs-shape_2 {
+  position: absolute;
+  height: 320px;
+  width: 320px;
+}
+.cs-shape_wrap_2 .cs-shape_2 {
+  right: -12%;
+  top: 12%;
+  animation: animo-x 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.cs-shape_2 .triangle {
+  background-color: #000;
+  transform: rotate(45deg);
+  height: 100%;
+  width: 100%;
+}
+@keyframes animo-x {
+  50% {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(44px);
+  }
+}

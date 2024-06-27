@@ -1,0 +1,31 @@
+.slick-slide {
+  width: 323px !important;
+  height: 380px !important;
+}
+
+.shape-2 {
+  left: 15%;
+  top: 62%;
+  height: 286px;
+  width: 286px;
+}
+.shape-1,
+.shape-2 {
+  position: absolute;
+  background-color: #000;
+  border-radius: 50%;
+}
+.shape-1 {
+  left: -2.5%;
+  top: 10%;
+  height: 50px;
+  width: 50px;
+  animation: animo-y 8s infinite;
+}
+
+@keyframes animo-y {
+  50% {
+    animation-timing-function: cubic-bezier(0.55, 0, 0.2, 1);
+    transform: translateY(30px);
+  }
+}

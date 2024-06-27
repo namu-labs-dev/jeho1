@@ -1,0 +1,8 @@
+.team-slide .slick-track {
+  gap: 0 !important;
+}
+.team-slide .slick-slide {
+  width: 656px !important;
+  height: 450px !important;
+  padding: 0 20px !important;
+}
