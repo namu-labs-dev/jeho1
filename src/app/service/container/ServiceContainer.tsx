@@ -2,6 +2,7 @@ import { type MotionValue, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ServiceTemplate } from "~/components/Templates/Service/ServiceTemplate";
 import { icons } from "~/data/icons";
+import { listcard } from "~/data/listcard";
 
 export const ServiceContainer = () => {
   const cursorX: MotionValue<number> = useMotionValue(-100);
@@ -42,6 +43,11 @@ export const ServiceContainer = () => {
   }, [cursorX, cursorY]);
   const serviceTemplateProps: React.ComponentProps<typeof ServiceTemplate> = {
     servicePricingPackModuleProps: { title: "ServicePricingPackModule" },
+    whatCanWeDoModuleProps: {
+      cardComponent: {
+        lists: listcard,
+      },
+    },
     headerModuleProps: {
       headerComponentProps: {
         bgImage: "bg-other-bg",
