@@ -34,7 +34,16 @@ export const ServiceTemplate = (props: Props) => {
         <TestimonialModule {...props.testimonialModuleProps} />
       </Content>
 
-      <FooterModule {...props.footerModuleProps} />
+      <Footer
+        style={{
+          backgroundColor: "transparent",
+          overflow: "hidden",
+          color: "white",
+          padding: 0,
+        }}
+      >
+        <FooterModule {...props.footerModuleProps} />
+      </Footer>
     </Layout>
   );
 };

@@ -49,7 +49,16 @@ export const HomeTemplate = (props: Props) => {
         <ParnterModule {...props.parnterModuleProps} />
       </Content>
 
-      <FooterModule {...props.footerModuleProps} />
+      <Footer
+        style={{
+          backgroundColor: "transparent",
+          overflow: "hidden",
+          color: "white",
+          padding: 0,
+        }}
+      >
+        <FooterModule {...props.footerModuleProps} />
+      </Footer>
       {/*
     <Footer style={{ padding: 0, minHeight: 50 }}>
     place for footer module

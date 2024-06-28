@@ -74,11 +74,11 @@ export const navLinks = [
     ],
   },
   {
-    link: "/",
+    link: "/portfolio",
     label: "Portfolio",
     children: [
       {
-        link: "/",
+        link: "/portfolio",
         label: "Portfolio",
       },
       {

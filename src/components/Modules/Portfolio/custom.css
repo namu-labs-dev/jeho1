@@ -1,0 +1,29 @@
+.grid-container {
+  display: grid;
+  grid-template-areas: "item1 item2" "item3 item4" "item5 item6" "item7 item8";
+  grid-gap: 1rem;
+}
+.portfolio {
+  grid-area: item1;
+}
+.portfolio:nth-child(2) {
+  grid-area: item2;
+}
+.portfolio:nth-child(3) {
+  grid-area: item3;
+}
+.portfolio:nth-child(4) {
+  grid-area: item4;
+}
+.portfolio:nth-child(5) {
+  grid-area: item5;
+}
+.portfolio:nth-child(6) {
+  grid-area: item6;
+}
+.portfolio:nth-child(7) {
+  grid-area: item7;
+}
+.portfolio:nth-child(8) {
+  grid-area: item8;
+}
