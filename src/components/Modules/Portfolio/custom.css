@@ -1,7 +1,12 @@
 .grid-container {
   display: grid;
-  grid-template-areas: "item1 item2" "item3 item4" "item5 item6" "item7 item8";
-  grid-gap: 1rem;
+  grid-template-areas:
+    "item1 item1 item2 item2 item3 item3"
+    "item4 item4 item4 item4 item5 item5"
+    "item6 item6 item7 item7 item7 item7";
+
+  grid-gap: 1.5rem;
+  width: 100%;
 }
 .portfolio {
   grid-area: item1;
@@ -24,6 +29,39 @@
 .portfolio:nth-child(7) {
   grid-area: item7;
 }
-.portfolio:nth-child(8) {
-  grid-area: item8;
+.portfolio_hover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  background-color: hsla(0, 0%, 9%, 0.4);
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+.portfolio:hover .portfolio_hover {
+  opacity: 1;
+}
+.portfolio.mobile {
+  grid-area: item4;
+}
+.portfolio.logo {
+  grid-area: item6;
+}
+.portfolio.logo2 {
+  grid-area: item7;
+}
+
+@media only screen and (max-width: 991px) {
+  .grid-container {
+    grid-template-areas:
+      "item1 item1 item1 item1"
+      "item2 item2 item2 item2"
+      "item3 item3 item3 item3"
+      "item4 item4 item4 item4"
+      "item5 item5 item5 item5"
+      "item6 item6 item6 item6"
+      "item7 item7 item7 item7";
+  }
 }

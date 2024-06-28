@@ -51,6 +51,7 @@ export const PortfolioContainer = () => {
           setActiveTag,
           activeTag,
         },
+        activeTag,
         leftContainerComponentProps: {
           subTitle: "Our Portfolio",
           title: "Some recent work",

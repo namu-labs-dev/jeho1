@@ -18,7 +18,7 @@ export const FooterModule = (props: Props) => {
       {props.isDiscussion && (
         <DiscussionComponent {...props.DiscussionComponent} />
       )}
-      <footer className='container mx-auto w-full px-[.7rem] text-accentGrey lg:p-0'>
+      <footer className='container mx-auto w-full px-[.7rem] text-accentGrey'>
         <div className='pb-[65px] pt-[95px]'>
           <div className='container'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
