@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { HomeTemplate } from "~/components/Templates/Home/HomeTemplate";
 import { icons } from "~/data/icons";
 import { listcard } from "~/data/listcard";
+import { testimonialList } from "~/data/testimonialList";
 
 export const HomeContainer = () => {
   const cursorX: MotionValue<number> = useMotionValue(-100);
@@ -45,7 +46,7 @@ export const HomeContainer = () => {
   const homeTemplateProps: React.ComponentProps<typeof HomeTemplate> = {
     whatCanWeDoModuleProps: {
       cardComponent: {
-        lists: listcard,
+        lists: listcard.slice(0, 8),
       },
     },
     homeHeaderModuleProps: {
@@ -80,6 +81,15 @@ export const HomeContainer = () => {
         title: "Let’s disscuse make something cool together",
       },
     },
+    homeBlogModuleProps: {},
+    latestProjectModuleProps: {},
+    ourAwardModuleProps: {},
+    ourTeamModuleProps: {},
+    parnterModuleProps: {},
+    testimonialModuleProps: {
+      testimonialList: testimonialList,
+    },
+    videoModuleProps: {},
     // homeContentModulerops: {
     //   DiscussionComponent: {
     //     title: "",

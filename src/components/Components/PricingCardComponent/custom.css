@@ -1,0 +1,15 @@
+.active-hover:hover:before {
+  opacity: 1;
+}
+.active-hover:before {
+  content: "";
+  position: absolute;
+  right: -55px;
+  top: -55px;
+  height: 135px;
+  width: 135px;
+  background: #ff4a17;
+  filter: blur(125px);
+  transition: all 0.4s ease;
+  opacity: 0;
+}

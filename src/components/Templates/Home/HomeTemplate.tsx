@@ -16,6 +16,13 @@ type Props = {
   whatCanWeDoModuleProps: React.ComponentProps<typeof WhatCanWeDoModule>;
   homeHeaderModuleProps: React.ComponentProps<typeof HomeHeaderModule>;
   footerModuleProps: React.ComponentProps<typeof FooterModule>;
+  latestProjectModuleProps: React.ComponentProps<typeof LatestProjectModule>;
+  ourAwardModuleProps: React.ComponentProps<typeof OurAwardModule>;
+  testimonialModuleProps: React.ComponentProps<typeof TestimonialModule>;
+  homeBlogModuleProps: React.ComponentProps<typeof HomeBlogModule>;
+  parnterModuleProps: React.ComponentProps<typeof ParnterModule>;
+  videoModuleProps: React.ComponentProps<typeof VideoModule>;
+  ourTeamModuleProps: React.ComponentProps<typeof OurTeamModule>;
   // homeContentModulerops: React.ComponentProps<typeof HomeContentModule>;
 };
 
@@ -33,13 +40,13 @@ export const HomeTemplate = (props: Props) => {
 
       <Content style={{ overflow: "hidden" }}>
         <WhatCanWeDoModule {...props.whatCanWeDoModuleProps} />
-        <LatestProjectModule />
-        <OurAwardModule />
-        <VideoModule />
-        <OurTeamModule />
-        <TestimonialModule />
-        <HomeBlogModule />
-        <ParnterModule />
+        <LatestProjectModule {...props.latestProjectModuleProps} />
+        <OurAwardModule {...props.ourAwardModuleProps} />
+        <VideoModule {...props.videoModuleProps} />
+        <OurTeamModule {...props.ourTeamModuleProps} />
+        <TestimonialModule {...props.testimonialModuleProps} />
+        <HomeBlogModule {...props.homeBlogModuleProps} />
+        <ParnterModule {...props.parnterModuleProps} />
       </Content>
 
       <FooterModule {...props.footerModuleProps} />

@@ -13,6 +13,7 @@ type Props = {
   headerModuleProps: React.ComponentProps<typeof HeaderModule>;
   footerModuleProps: React.ComponentProps<typeof FooterModule>;
   whatCanWeDoModuleProps: React.ComponentProps<typeof WhatCanWeDoModule>;
+  testimonialModuleProps: React.ComponentProps<typeof TestimonialModule>;
 };
 
 export const ServiceTemplate = (props: Props) => {
@@ -29,8 +30,8 @@ export const ServiceTemplate = (props: Props) => {
 
       <Content style={{ overflow: "auto", marginTop: 100 }}>
         <WhatCanWeDoModule {...props.whatCanWeDoModuleProps} />
-        <TestimonialModule />
         <ServicePricingPackModule {...props.servicePricingPackModuleProps} />
+        <TestimonialModule {...props.testimonialModuleProps} />
       </Content>
 
       <FooterModule {...props.footerModuleProps} />

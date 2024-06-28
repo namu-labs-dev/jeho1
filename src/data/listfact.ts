@@ -1,4 +1,4 @@
-import { type FactListAtomProps } from "./FactListAtom";
+import { type FactListAtomProps } from "~/components/Atoms/FactListAtom/FactListAtom";
 
 export const listfact: FactListAtomProps[] = [
   {

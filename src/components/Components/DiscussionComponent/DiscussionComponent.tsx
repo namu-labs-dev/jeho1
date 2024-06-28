@@ -9,6 +9,7 @@ const DiscussionComponent = (props: DiscussionComponentProps) => {
   const { title } = props;
   return (
     <>
+      <DividerComponent className='h-[80px] lg:h-[145px]' />
       <div className='container mx-auto w-full px-[.75rem] xl:p-0'>
         <div className='relative z-20 flex h-[400px]  w-full flex-col items-center justify-center gap-[30px] rounded-[15px] bg-linear-gradient px-[30px] py-[40px] md:px-[50px] xl:flex-row xl:px-[80px] xl:py-[70px]'>
           <div className='cs-shape_1'></div>

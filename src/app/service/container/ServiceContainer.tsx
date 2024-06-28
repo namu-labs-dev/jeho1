@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { ServiceTemplate } from "~/components/Templates/Service/ServiceTemplate";
 import { icons } from "~/data/icons";
 import { listcard } from "~/data/listcard";
+import { packagelist } from "~/data/packagelist";
+import { testimonialList } from "~/data/testimonialList";
 
 export const ServiceContainer = () => {
   const cursorX: MotionValue<number> = useMotionValue(-100);
@@ -10,6 +12,7 @@ export const ServiceContainer = () => {
   const [isBlack, setIsBlack] = useState(false);
   const [activeNavbar, setActiveNavbar] = useState(false);
   const [activeDrawer, setActiveDrawer] = useState(false);
+  const [isActive, setIsActive] = useState("Monthly");
 
   const handleToggle = () => {
     setActiveNavbar(!activeNavbar);
@@ -42,7 +45,19 @@ export const ServiceContainer = () => {
     };
   }, [cursorX, cursorY]);
   const serviceTemplateProps: React.ComponentProps<typeof ServiceTemplate> = {
-    servicePricingPackModuleProps: { title: "ServicePricingPackModule" },
+    servicePricingPackModuleProps: {
+      isActive,
+      leftContainerComponentProps: {
+        subTitle: "Pricing & Packaging",
+        title: "Providing best pricing for client",
+      },
+      packagelist: packagelist,
+      serviceButtonComponentProps: {
+        buttons: ["Monthly", "Yearly"],
+        isActive,
+        setIsActive,
+      },
+    },
     whatCanWeDoModuleProps: {
       cardComponent: {
         lists: listcard,
@@ -88,6 +103,9 @@ export const ServiceContainer = () => {
       DiscussionComponent: {
         title: "Let’s disscuse make something cool together",
       },
+    },
+    testimonialModuleProps: {
+      testimonialList: testimonialList,
     },
   };
 
