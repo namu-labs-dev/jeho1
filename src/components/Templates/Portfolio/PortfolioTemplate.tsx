@@ -3,6 +3,7 @@ import { Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import { FooterModule } from "~/components/Modules/Footer/FooterModule";
 import { HeaderModule } from "~/components/Modules/Header/HeaderModule";
+import { AgencyModule } from "~/components/Modules/Agency/AgencyModule";
 
 type Props = {
   portfolioOurPortfolioWorkModuleProps: React.ComponentProps<
@@ -37,8 +38,9 @@ export const PortfolioTemplate = (props: Props) => {
           color: "white",
           padding: 0,
         }}
-        className='md:px-[1.2rem]'
+        className='mt-[8rem] md:px-[1.2rem]'
       >
+        <AgencyModule />
         <FooterModule {...props.footerModuleProps} />
       </Footer>
     </Layout>
