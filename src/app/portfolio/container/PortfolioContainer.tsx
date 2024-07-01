@@ -2,6 +2,7 @@ import { type MotionValue, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import { PortfolioTemplate } from "~/components/Templates/Portfolio/PortfolioTemplate";
 import { icons } from "~/data/icons";
+import { listTitle } from "~/data/listfact";
 import { portfolioListContent, portfolioListTag } from "~/data/portfolioList";
 
 export const PortfolioContainer = () => {
@@ -69,6 +70,8 @@ export const PortfolioContainer = () => {
       },
       footerModuleProps: {
         isDiscussion: false,
+        listTitleComponentProps: listTitle,
+        info: "Welcome to arino sed ut perspiciae omunde omnis iste natus error sitort voluptatem accusantium.",
         DiscussionComponent: {
           title: "",
         },
