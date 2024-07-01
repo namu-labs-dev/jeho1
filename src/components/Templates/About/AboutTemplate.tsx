@@ -37,6 +37,7 @@ export const AboutTemplate = (props: Props) => {
           backgroundColor: "transparent",
           overflow: "hidden",
           color: "white",
+          padding: 0,
         }}
         className='md:px-[1.2rem]'
       >

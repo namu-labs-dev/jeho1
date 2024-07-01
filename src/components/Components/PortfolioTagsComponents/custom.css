@@ -1,0 +1,12 @@
+.active-port::before {
+  content: " ";
+  position: absolute;
+  background-color: #ff4a17;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  bottom: -15px;
+  left: 50%;
+  margin-left: -5px;
+  transition: all 0.4s ease;
+}

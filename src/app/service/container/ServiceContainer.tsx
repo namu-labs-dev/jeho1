@@ -2,6 +2,10 @@ import { type MotionValue, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ServiceTemplate } from "~/components/Templates/Service/ServiceTemplate";
 import { icons } from "~/data/icons";
+import { listcard } from "~/data/listcard";
+import { listTitle } from "~/data/listfact";
+import { packagelist } from "~/data/packagelist";
+import { testimonialList } from "~/data/testimonialList";
 
 export const ServiceContainer = () => {
   const cursorX: MotionValue<number> = useMotionValue(-100);
@@ -9,6 +13,7 @@ export const ServiceContainer = () => {
   const [isBlack, setIsBlack] = useState(false);
   const [activeNavbar, setActiveNavbar] = useState(false);
   const [activeDrawer, setActiveDrawer] = useState(false);
+  const [isActive, setIsActive] = useState("Monthly");
 
   const handleToggle = () => {
     setActiveNavbar(!activeNavbar);
@@ -41,7 +46,24 @@ export const ServiceContainer = () => {
     };
   }, [cursorX, cursorY]);
   const serviceTemplateProps: React.ComponentProps<typeof ServiceTemplate> = {
-    servicePricingPackModuleProps: { title: "ServicePricingPackModule" },
+    servicePricingPackModuleProps: {
+      isActive,
+      leftContainerComponentProps: {
+        subTitle: "Pricing & Packaging",
+        title: "Providing best pricing for client",
+      },
+      packagelist: packagelist,
+      serviceButtonComponentProps: {
+        buttons: ["Monthly", "Yearly"],
+        isActive,
+        setIsActive,
+      },
+    },
+    whatCanWeDoModuleProps: {
+      cardComponent: {
+        lists: listcard,
+      },
+    },
     headerModuleProps: {
       headerComponentProps: {
         bgImage: "bg-other-bg",
@@ -75,6 +97,8 @@ export const ServiceContainer = () => {
       },
     },
     footerModuleProps: {
+      listTitleComponentProps: listTitle,
+      info: "Welcome to arino sed ut perspiciae omunde omnis iste natus error sitort voluptatem accusantium.",
       socialComponents: {
         icon: icons,
       },
@@ -82,6 +106,9 @@ export const ServiceContainer = () => {
       DiscussionComponent: {
         title: "Let’s disscuse make something cool together",
       },
+    },
+    testimonialModuleProps: {
+      testimonialList: testimonialList,
     },
   };
 

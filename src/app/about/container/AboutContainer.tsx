@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { AboutTemplate } from "~/components/Templates/About/AboutTemplate";
 import { aboutOurAgency } from "~/data/agency";
 import { icons } from "~/data/icons";
+import { listTitle } from "~/data/listfact";
 
 export const AboutContainer = () => {
   const cursorX: MotionValue<number> = useMotionValue(-100);
@@ -84,6 +85,8 @@ export const AboutContainer = () => {
     whyChooseUsModuleProps: {},
     ourTeamModuleProps: {},
     footerModuleProps: {
+      listTitleComponentProps: listTitle,
+      info: "Welcome to arino sed ut perspiciae omunde omnis iste natus error sitort voluptatem accusantium.",
       socialComponents: {
         icon: icons,
       },
